@@ -62,11 +62,11 @@ namespace Heroes.Models.Map
             {
                 if (knights.Any(x => x.IsAlive))
                 {
-                    return $"The knights took {knights.Where(k => k.IsAlive).ToList().Count} casualties but won the battle.";
+                    return $"The knights took {knights.Where(k => !k.IsAlive).ToList().Count} casualties but won the battle.";
                 }
                 else
                 {
-                    return $"The barbarians took {barbarians.Where(b => b.IsAlive).ToList().Count} casualties but won the battle.";
+                    return $"The barbarians took {barbarians.Where(b => !b.IsAlive).ToList().Count} casualties but won the battle.";
                 }
             }
             return null;
